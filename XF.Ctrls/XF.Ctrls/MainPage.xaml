@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XF.Ctrls"
+             x:Class="XF.Ctrls.MainPage">
+
+    <StackLayout HorizontalOptions="FillAndExpand"
+                 VerticalOptions="Center"
+                 Spacing="10"
+                 Margin="20">
+        <local:Dropdown HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Center"
+                        BackgroundColor="LawnGreen"
+                        x:Name="dropdown"/>
+        <StackLayout HorizontalOptions="FillAndExpand"
+                     VerticalOptions="Center"
+                     Padding="10"
+                     BackgroundColor="LightGreen">
+            <Label HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   x:Name="label"/>
+        </StackLayout>
+        <Button x:Name="btn"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="Center"
+                Clicked="btn_Clicked"
+                Text="Suffle"/>
+    </StackLayout>
+</ContentPage>
