@@ -4,8 +4,12 @@ using Xamarin.Forms;
 
 namespace XF.Ctrls
 {
-    public class Dropdown : View
+    public class Dropdown : Label
     {
+        public Dropdown()
+        {
+            Padding = new Thickness(10);
+        }
         public static readonly BindableProperty ItemsSourceProperty = BindableProperty.Create(
             propertyName: nameof(ItemsSource),
             returnType: typeof(List<string>),
