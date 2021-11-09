@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using Android.Content;
+using Android.Support.V7.Widget;
 using Android.Widget;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
@@ -9,9 +10,9 @@ using XF.Ctrls.Droid;
 [assembly: ExportRenderer(typeof(Dropdown), typeof(DropdownRenderer))]
 namespace XF.Ctrls.Droid
 {
-    public class DropdownRenderer : ViewRenderer<Dropdown, Spinner>
+    public class DropdownRenderer : ViewRenderer<Dropdown, AppCompatSpinner>
     {
-        Spinner spinner;
+        AppCompatSpinner spinner;
         public DropdownRenderer(Context context) : base(context)
         {
 
@@ -23,7 +24,7 @@ namespace XF.Ctrls.Droid
 
             if (Control == null)
             {
-                spinner = new Spinner(Context);
+                spinner = new AppCompatSpinner(Context);
                 SetNativeControl(spinner);
             }
 
@@ -50,6 +51,7 @@ namespace XF.Ctrls.Droid
         protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             var view = Element;
+            Control.DropDownVerticalOffset = 55;
             if (e.PropertyName == Dropdown.ItemsSourceProperty.PropertyName)
             {
                 ArrayAdapter adapter = new ArrayAdapter(Context, Android.Resource.Layout.SimpleListItem1, view.ItemsSource);
